@@ -1,0 +1,47 @@
+import { Briefcase } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+import { Button } from "./ui/button";
+
+const Navbar = () => {
+  return (
+    <>
+      <nav className="border-b border-gray-200 bg-white">
+        <div className="container mx-auto flex h-16 items-center px-4 justify-between">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-semibold text-primary"
+          >
+            <Briefcase />
+            Job Tracker
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/sign-in">
+              <Button
+                variant={"ghost"}
+                size={"lg"}
+                className={
+                  "rounded-md cursor-pointer text-gray-700 hover:text-black transition-colors"
+                }
+              >
+                Log In
+              </Button>
+            </Link>
+            <Link href="/sign-up">
+              <Button
+                size={"lg"}
+                className={
+                  "bg-primary text-white rounded-md cursor-pointer hover:bg-primary/80 transition-colors"
+                }
+              >
+                Start for free
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Navbar;
