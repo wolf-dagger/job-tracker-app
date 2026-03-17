@@ -16,6 +16,8 @@ const Dashboard = async () => {
   const board = await Board.findOne({
     userId: session.user.id,
     name: "Job Hunt",
+  }).populate({
+    path: "columns",
   });
 
   return (
@@ -28,7 +30,10 @@ const Dashboard = async () => {
               Track your job applications efficiently...
             </p>
           </div>
-          <KanbanBoard board={board} userId={session.user.id} />
+          <KanbanBoard
+            board={JSON.parse(JSON.stringify(board))}
+            userId={session.user.id}
+          />
         </div>
       </div>
     </>
