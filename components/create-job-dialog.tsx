@@ -28,7 +28,7 @@ const INITIAL_FORM_DATA = {
   location: "",
   notes: "",
   salary: "",
-  jpbUrl: "",
+  jobUrl: "",
   tags: "",
   description: "",
 };
@@ -68,10 +68,12 @@ const CreateJobApplicationDialog = ({
     <>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger>
-          <Button variant={"outline"}>
+          {/* <Button variant={"outline"}> */}
+          <div className="flex items-center border border-gray-200 px-2 py-1 text-sm rounded-md cursor-pointer">
             <Plus className="mr-2 h-4 w-4" />
             Add Job
-          </Button>
+          </div>
+          {/* </Button> */}
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -136,9 +138,9 @@ const CreateJobApplicationDialog = ({
                   <Input
                     id="jobURL"
                     placeholder="https://example.com"
-                    value={formData.jpbUrl}
+                    value={formData.jobUrl}
                     onChange={(e) =>
-                      setFormData({ ...formData, jpbUrl: e.target.value })
+                      setFormData({ ...formData, jobUrl: e.target.value })
                     }
                   />
                 </div>
