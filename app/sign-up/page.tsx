@@ -45,7 +45,7 @@ const SignUp = () => {
         router.push("/dashboard");
       }
     } catch (err) {
-      setError("Failed to sign up... . Unexpected error : ");
+      setError("Failed to sign up... . Unexpected error : " + err);
     } finally {
       setLoading(false);
     }

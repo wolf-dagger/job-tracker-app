@@ -5,7 +5,9 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { initializeUserBoard } from "../init-user-board";
 
-const client = new MongoClient(process.env.MONGODB_URI!);
+const client = new MongoClient(process.env.MONGODB_URI!, {
+  tls: true,
+});
 const db = client.db();
 
 export const auth = betterAuth({
