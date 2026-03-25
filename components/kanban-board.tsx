@@ -84,13 +84,13 @@ function DroppableColumn({
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <div>
-                  <Button
+                  {/* <Button
                     variant="ghost"
                     size={"icon"}
                     className={"h-6 w-6 text-white hover:bg-white/20"}
-                  >
-                    <MoreVertical className="h-4 w-4" />
-                  </Button>
+                  > */}
+                  <MoreVertical className="h-4 w-4" />
+                  {/* </Button> */}
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
